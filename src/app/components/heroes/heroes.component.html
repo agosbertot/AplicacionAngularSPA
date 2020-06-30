@@ -1,0 +1,30 @@
+<!-- <h1>Heroes <small>Marvel y DC</small></h1>
+
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i=index"> -->
+<!-- el [src]="heroe.img"  es lo mismo que hacer src="{{heroe.img}}" // lo mismo para el alt="{{heroe.nombre}}" -->
+<!-- <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">Ver mas..</button> -->
+<!-- con la siguiente linea ya funciona la ruta no necesito hacer la funcion del click -->
+<!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary btn-block">Ver mas...</a> -->
+<!-- </div>
+    </div>
+
+</div> -->
+
+<h1>Heroes <small>Marvel y DC</small></h1>
+
+<div class="card-columns">
+    <!-- [heroe]="heroe" el que esta entre corchetes es el nombre de la propiedad que cree en heroe-tarjeta-components, el otro hero es el que me genera el ngFor, aca estoy pasandole informacion de un componente padre a un componente hijo -->
+
+    <!-- <app-heroe-trajeta (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i=index"></app-heroe-trajeta> -->
+
+    <!-- (heroeSeleccionado) funciona como un (click) en vez de click va a escuchar a heroeSeleccionado, y el $event es para recibir el emit en verHeroe de heroetarjeta, es decir el evento que esta emitiendo -->
+
+    <app-heroe-trajeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i=index"></app-heroe-trajeta>
+</div>
